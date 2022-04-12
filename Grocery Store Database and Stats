@@ -1,0 +1,9 @@
+CREATE TABLE grocery_store (id INTEGER PRIMARY KEY, name TEXT, quantity_sold INTEGER, price INTEGER, in_stock INTEGER);
+
+INSERT INTO grocery_store VALUES (1, 'bananas', 4, 6.00, 10);
+INSERT INTO grocery_store VALUES (2, 'apples', 2, 2.00, 8);
+INSERT INTO grocery_store VALUES (3, 'kiwis', 10, 1.00, 20);
+
+SELECT * FROM grocery_store ORDER BY price;
+
+SELECT SUM(in_stock) FROM grocery_store
