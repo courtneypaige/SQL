@@ -1,0 +1,38 @@
+/* Create table about the people and what they do here */
+
+
+CREATE TABLE movie_stars (id INTEGER, name TEXT);
+
+
+INSERT INTO movie_stars VALUES (1, 'Tom_Hanks');
+INSERT INTO movie_stars VALUES (2, 'Tom_Hardy');
+INSERT INTO movie_stars VALUES (3, 'Tom_Holland');
+INSERT INTO movie_stars VALUES (4, 'Tom_Cruise');
+INSERT INTO movie_stars VALUES (5, 'Tom_Hiddleston');
+
+
+CREATE TABLE movies (id INTEGER, title TEXT);
+
+
+INSERT INTO movies VALUES (1, 'Forest_Gump');
+INSERT INTO movies VALUES (2, 'Venom');
+INSERT INTO movies VALUES (3, 'Spiderman_No_Way_Home');
+INSERT INTO movies VALUES (4, 'Jack_Reacher');
+INSERT INTO movies VALUES (5, 'Endgame');
+
+
+CREATE TABLE relationship_status (id INTEGER, status TEXT);
+
+INSERT INTO relationship_status VALUES (1, 'married');
+INSERT INTO relationship_status VALUES (2, 'married');
+INSERT INTO relationship_status VALUES (3, 'dating');
+INSERT INTO relationship_status VALUES (4, 'dating');
+INSERT INTO relationship_status VALUES (5, 'married');
+
+SELECT movie_stars.name, movies.title FROM movie_stars
+JOIN movies
+ON movie_stars.id = movies.id;
+
+SELECT movie_stars.name, relationship_status.status FROM movie_stars
+JOIN relationship_status
+ON movie_stars.id = relationship_status.id;
