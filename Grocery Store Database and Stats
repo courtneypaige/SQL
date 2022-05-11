@@ -1,9 +1,32 @@
+--Create a grocery store database
+
 CREATE TABLE grocery_store (id INTEGER PRIMARY KEY, name TEXT, quantity_sold INTEGER, price INTEGER, in_stock INTEGER);
 
 INSERT INTO grocery_store VALUES (1, 'bananas', 4, 6.00, 10);
 INSERT INTO grocery_store VALUES (2, 'apples', 2, 2.00, 8);
 INSERT INTO grocery_store VALUES (3, 'kiwis', 10, 1.00, 20);
+INSERT into grocery_store VALUES (4, 'yogurt cups', 20, 1.00, 30);
+INSERT into grocery_store VALUES (5, 'peanut butter', 3, 3.00, 10);
+INSERT into grocery_store VALUES (6, 'eggs', 6, 2.00, 12);
+INSERT into grocery_store VALUES (7, 'bread', 4, 2.00, 10);
+INSERT into grocery_store VALUES (8, 'milk', 5, 3.00, 15);
+INSERT into grocery_store VALUES (9, 'carrots', 4, 2.00, 12);
+INSERT into grocery_store VALUES (10, 'celery', 3, 1.00, 10);
+INSERT into grocery_store VALUES (11, 'cheese sticks', 8, 1.00, 20);
+INSERT into grocery_store VALUES (12, 'cookies', 5, 2.00, 25);
+INSERT into grocery_store VALUES (13, 'ice cream', 6, 4.00, 15);
+INSERT into grocery_store VALUES (14, 'chicken nugs', 3, 5.00, 9);
+INSERT into grocery_store VALUES (15, 'french fries', 3, 4.00, 9);
 
-SELECT * FROM grocery_store ORDER BY price;
+--display the database ordered by price
 
-SELECT SUM(in_stock) FROM grocery_store
+SELECT * FROM grocery_store ORDER BY price DESC;
+
+--display the total number of items in stock at the store
+
+SELECT SUM(in_stock) FROM grocery_store;
+
+--display the average cost of an item from the store
+
+SELECT AVG(price) FROM grocery_store;
+
