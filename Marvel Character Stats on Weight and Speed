@@ -48,11 +48,19 @@ INSERT INTO marvels VALUES(25, "Juggernaut", 76, "Neutral", "Male", 2.87, 862, "
 INSERT INTO marvels VALUES(26, "Professor X", 58, "Good", "Male", 1.83, 86, "EUA", 5, 2, 2, 2, 5, 3);
 
 
+--display how much each marvel character weighs
+
 SELECT name, weight_kg FROM marvels;
+
+--display the average weight for a marvel character
 
 SELECT AVG(weight_kg) FROM marvels;
 
+--round the average weight
+
 SELECT ROUND(AVG(weight_kg)) FROM marvels;
+
+--display the name and weight for each marvel character and whether they are above, at or below the average weight for a marvel character
 
 SELECT name, weight_kg,
     CASE
@@ -62,11 +70,19 @@ SELECT name, weight_kg,
     END AS 'weight_vs_average'
 FROM marvels;
 
+--display the name and speed for each marvel character
+
 SELECT name, speed FROM marvels;
+
+--display the average speed for a marvel character
 
 SELECT AVG(speed) FROM marvels;
 
+--round the average speed
+
 SELECT ROUND(AVG(speed)) FROM marvels;
+
+--display the name, speed and weight for each marvel character where speed is greater than 4 and weight is less than 170
 
 SELECT name, speed, weight_kg FROM marvels WHERE speed > 4 AND weight_kg > 170;
 
