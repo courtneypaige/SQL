@@ -1,4 +1,9 @@
+In this project, you’re going to I made my own table with some small set of “famous people”, and then made more tables about things they do and joined those to create nice human readable lists.
+
+
 /* Create table about the people and what they do here */
+
+--Create a table of movie stars
 
 
 CREATE TABLE movie_stars (id INTEGER, name TEXT);
@@ -10,6 +15,8 @@ INSERT INTO movie_stars VALUES (3, 'Tom_Holland');
 INSERT INTO movie_stars VALUES (4, 'Tom_Cruise');
 INSERT INTO movie_stars VALUES (5, 'Tom_Hiddleston');
 
+--Create a table displaying movies the movie stars are in
+
 
 CREATE TABLE movies (id INTEGER, title TEXT);
 
@@ -20,6 +27,7 @@ INSERT INTO movies VALUES (3, 'Spiderman_No_Way_Home');
 INSERT INTO movies VALUES (4, 'Jack_Reacher');
 INSERT INTO movies VALUES (5, 'Endgame');
 
+--Create a table with the relationship status of these movie stars
 
 CREATE TABLE relationship_status (id INTEGER, status TEXT);
 
@@ -29,9 +37,13 @@ INSERT INTO relationship_status VALUES (3, 'dating');
 INSERT INTO relationship_status VALUES (4, 'dating');
 INSERT INTO relationship_status VALUES (5, 'married');
 
+--display the movie stars and the movies they are in by joining the two tables
+
 SELECT movie_stars.name, movies.title FROM movie_stars
 JOIN movies
 ON movie_stars.id = movies.id;
+
+--display the movie stars and their relationship status by joining the two tables
 
 SELECT movie_stars.name, relationship_status.status FROM movie_stars
 JOIN relationship_status
